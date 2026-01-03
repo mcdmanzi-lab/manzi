@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manzi Chris – BE-WISE Student Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Manzi Chris – BE-WISE Student Registration Portal</h1>
+        <p>Empowering TVET students through innovation</p>
+    </header>
+
+    <main>
+        <form id="registrationForm">
+            <h2>Student Registration</h2>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="ex@gmail.com" required>
+
+            <label>Phone Number</label>
+            <input type="tel" placeholder="07xxxxxxx" required>
+
+            <label>School Name</label>
+            <input type="text" placeholder="Enter your TVET school" required>
+
+            <label>Trade / Option</label>
+            <select required>
+                <option value="">Select your option</option>
+                <option>Software Development</option>
+                <option>Electrical Technology</option>
+                <option>Mechanical Technology</option>
+                <option>Construction</option>
+            </select>
+
+            <label>Project Title</label>
+            <input type="text" placeholder="Enter project title" required>
+            <label for="">project type</label>
+            <select name="" id="" aria-placeholder=" web"><input type="select" placeholder="web"></select>
+
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2026 BE-WISE NGO | All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0b5ed7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+form {
+    background-color: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0b5ed7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #084298;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #ddd;
+}
+</style>
+<script>const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = form.querySelector("input[type='email']").value;
+    const phone = form.querySelector("input[type='tel']").value;
+
+    if (!email.includes("@")) {
+        alert("Please enter a valid email address");
+        return;
+    }
+
+    if (phone.length < 10) {
+        alert("Phone number must be at least 10 digits");
+        return;
+    }
+
+    alert("Registration successful!");
+    form.reset();
+});
+</script>
